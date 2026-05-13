@@ -155,7 +155,7 @@ export const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 mb-14"
           >
             <Link
-              href="/portfolio"
+              href="/#portfolio"
               className="group relative overflow-hidden btn-primary rounded-full flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white whitespace-nowrap"
               style={{ animation: "glow-pulse 3s ease-in-out infinite" }}
             >
@@ -201,6 +201,29 @@ export const HeroSection = () => {
               >
                 {tech.name}
               </span>
+            ))}
+          </motion.div>
+
+          {/* ── Stats bar ── */}
+          <motion.div
+            {...fadeUp(1.55)}
+            className="flex flex-wrap items-center gap-x-8 gap-y-3 mt-8 pt-6 border-t border-[var(--border-color)]"
+          >
+            {[
+              { value: "10+", label: "完成專案" },
+              { value: "2 年", label: "全端開發經驗" },
+              { value: "24h", label: "平均回覆時間" },
+              { value: "100%", label: "如期交付" },
+            ].map((stat) => (
+              <div key={stat.label} className="flex items-baseline gap-2">
+                <span
+                  className="text-xl font-bold font-mono gradient-text"
+                  style={{ fontFamily: "var(--font-heading), system-ui, sans-serif" }}
+                >
+                  {stat.value}
+                </span>
+                <span className="text-sm text-[var(--text-color-muted)]">{stat.label}</span>
+              </div>
             ))}
           </motion.div>
         </div>

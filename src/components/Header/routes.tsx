@@ -12,7 +12,7 @@ export const routes: {
   },
   {
     label: "作品集",
-    href: "/portfolio",
+    href: "/#portfolio",
   },
   {
     label: "報價方案",

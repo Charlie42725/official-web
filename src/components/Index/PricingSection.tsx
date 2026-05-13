@@ -250,16 +250,16 @@ export const PricingSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05, ease: "easeOut" }}
-                  className="flex items-center justify-between px-6 py-3.5 hover:bg-[var(--background-color-primary)] transition-colors group"
+                  className="flex items-center justify-between px-4 sm:px-6 py-3 hover:bg-[var(--background-color-primary)] transition-colors group"
                 >
-                  <span className="text-sm text-[var(--text-color)] font-medium group-hover:text-[var(--text-color-primary)] transition-colors">
+                  <span className="text-sm text-[var(--text-color)] font-medium group-hover:text-[var(--text-color-primary)] transition-colors shrink-0 mr-2">
                     {item.name}
                   </span>
-                  <div className="flex items-center gap-6 text-right">
-                    <span className="text-sm font-mono text-[var(--text-color-primary)] hidden sm:block">
+                  <div className="flex flex-col items-end sm:flex-row sm:items-center sm:gap-6">
+                    <span className="text-sm font-mono text-[var(--text-color-primary)] leading-tight">
                       NT$ {item.price}
                     </span>
-                    <span className="text-xs font-mono text-[var(--text-color-muted)] w-16 text-right">
+                    <span className="text-[10px] sm:text-xs font-mono text-[var(--text-color-muted)] sm:w-16 sm:text-right leading-tight">
                       {item.timeline}
                     </span>
                   </div>

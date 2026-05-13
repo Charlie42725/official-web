@@ -9,7 +9,9 @@
       "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"freelance developer portfolio dark premium\" --design-system -p \"Charlie Portfolio\")",
       "Bash(python src/ui-ux-pro-max/scripts/search.py \"freelance developer portfolio dark premium tech\" --design-system -p \"Charlie Portfolio\")",
       "Bash(PYTHONIOENCODING=utf-8 python src/ui-ux-pro-max/scripts/search.py \"freelance developer portfolio dark premium tech\" --design-system -p \"Charlie Portfolio\")",
-      "Bash(PYTHONIOENCODING=utf-8 python src/ui-ux-pro-max/scripts/search.py \"landing page hero social proof CTA pricing\" --domain landing)"
+      "Bash(PYTHONIOENCODING=utf-8 python src/ui-ux-pro-max/scripts/search.py \"landing page hero social proof CTA pricing\" --domain landing)",
+      "Bash(npx tsc *)",
+      "Bash(npx next *)"
     ]
   }
 }

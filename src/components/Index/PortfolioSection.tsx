@@ -12,7 +12,7 @@ import {
 } from "framer-motion";
 import { fadeInItem, staggerContainer } from "@/libs/motion";
 import Link from "next/link";
-import { ArrowRightOutlined, LinkOutlined } from "@ant-design/icons";
+import { ArrowRightOutlined, LinkOutlined, MessageOutlined } from "@ant-design/icons";
 import { useRef } from "react";
 
 const T = (url: string) =>
@@ -191,15 +191,25 @@ export const PortfolioSection = () => {
           whileInView="show"
           viewport={{ once: true }}
           variants={fadeInItem}
-          className="text-center"
+          className="text-center flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            href="/portfolio"
-            className="btn rounded-full inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold hover:border-[var(--text-color-primary)] hover:text-[var(--text-color-primary)] transition-all"
+            href="/#pricing"
+            className="btn-primary rounded-full inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold text-white"
+            style={{ animation: "glow-pulse 3s ease-in-out infinite" }}
           >
-            查看全部 10 個作品
+            查看報價方案
             <ArrowRightOutlined />
           </Link>
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=wulinux42%40gmail.com&su=%E6%8E%A5%E6%A1%88%E8%A9%A2%E5%95%8F"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn rounded-full inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold hover:border-[var(--text-color-primary)] hover:text-[var(--text-color-primary)] transition-all"
+          >
+            討論你的需求
+            <MessageOutlined />
+          </a>
         </motion.div>
       </div>
     </section>
