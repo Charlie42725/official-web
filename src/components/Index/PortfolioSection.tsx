@@ -56,11 +56,11 @@ const preview = [
     tags: ["Next.js", "OpenAI API"],
   },
   {
-    url: "https://buyoutside.vercel.app/",
-    img: T("https://buyoutside.vercel.app/"),
-    title: "代購記帳軟體",
-    category: "財務工具",
-    tags: ["React", "Supabase"],
+    url: "https://esim-orpin.vercel.app/",
+    img: T("https://esim-orpin.vercel.app/"),
+    title: "eSIM 電商平台",
+    category: "電商平台",
+    tags: ["Next.js", "Supabase"],
   },
 ];
 
