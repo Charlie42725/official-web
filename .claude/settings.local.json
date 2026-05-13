@@ -3,7 +3,13 @@
     "allow": [
       "Bash(python \"C:\\\\Users\\\\linei\\\\.claude\\\\plugins\\\\cache\\\\ui-ux-pro-max-skill\\\\ui-ux-pro-max\\\\2.0.1\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"personal freelance developer portfolio tech professional modern\" --design-system -p \"Charlie Dev\")",
       "Bash(python \"C:\\\\Users\\\\linei\\\\.claude\\\\plugins\\\\cache\\\\ui-ux-pro-max-skill\\\\ui-ux-pro-max\\\\2.0.1\\\\src\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"personal freelance developer portfolio tech professional modern\" --design-system -p \"Charlie Dev\")",
-      "PowerShell($env:PYTHONIOENCODING=\"utf-8\"; python \"C:\\\\Users\\\\linei\\\\.claude\\\\plugins\\\\cache\\\\ui-ux-pro-max-skill\\\\ui-ux-pro-max\\\\2.0.1\\\\src\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"personal freelance developer portfolio tech professional modern\" --design-system -p \"Charlie Dev\" 2>&1)"
+      "PowerShell($env:PYTHONIOENCODING=\"utf-8\"; python \"C:\\\\Users\\\\linei\\\\.claude\\\\plugins\\\\cache\\\\ui-ux-pro-max-skill\\\\ui-ux-pro-max\\\\2.0.1\\\\src\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"personal freelance developer portfolio tech professional modern\" --design-system -p \"Charlie Dev\" 2>&1)",
+      "Read(//c/Users/linei/.claude/plugins/cache/ui-ux-pro-max-skill/ui-ux-pro-max/2.0.1/**)",
+      "Bash(python skills/ui-ux-pro-max/scripts/search.py \"freelance developer portfolio dark premium\" --design-system -p \"Charlie Portfolio\")",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"freelance developer portfolio dark premium\" --design-system -p \"Charlie Portfolio\")",
+      "Bash(python src/ui-ux-pro-max/scripts/search.py \"freelance developer portfolio dark premium tech\" --design-system -p \"Charlie Portfolio\")",
+      "Bash(PYTHONIOENCODING=utf-8 python src/ui-ux-pro-max/scripts/search.py \"freelance developer portfolio dark premium tech\" --design-system -p \"Charlie Portfolio\")",
+      "Bash(PYTHONIOENCODING=utf-8 python src/ui-ux-pro-max/scripts/search.py \"landing page hero social proof CTA pricing\" --domain landing)"
     ]
   }
 }
