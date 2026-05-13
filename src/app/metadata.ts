@@ -1,63 +1,34 @@
-
 import type { Metadata } from "next";
 
-const title = "Futurix - Offical Website";
-const description = ""
+const title = "Charlie · 台科大資管系 個人接案";
+const description =
+  "台科大資管系全端開發者，協助品牌、店家與團隊打造可實際營運的網站、系統與 AI 工具。承接品牌官網、電商平台、LINE Bot、AI 工具、企業系統整合等專案。";
 const url = "";
 
 export const metadata: Metadata = {
-  // metadataBase: new URL(url),
   title: {
     default: title,
-    template: "%s | " + title,
+    template: "%s | Charlie Dev",
   },
   description,
   icons: {
     icon: [{ rel: "icon", url: "/favicon.ico" }],
   },
-  authors: [
-    { name: "FanYu", url: "https://github.com/fanyuuu2006" },
-  ],
-
+  authors: [{ name: "Charlie", url: "https://github.com/Charlie42725" }],
   keywords: [
+    "接案",
+    "全端開發",
+    "Next.js",
+    "React",
+    "台科大",
+    "資管系",
+    "LINE Bot",
+    "AI 工具",
+    "網站開發",
+    "系統整合",
+    "自動化",
   ],
-
-  // openGraph: {
-  //   siteName: title,
-  //   title,
-  //   description,
-  //   url,
-  //   images: [
-  //     {
-  //       url: "/GameShow.jpg",
-  //       width: 1200,
-  //       height: 630,
-  //       alt: "FanYu Profile Image - Frontend Developer Portfolio",
-  //     },
-  //   ],
-  //   locale: "zh_TW",
-  //   alternateLocale: ["en_US"],
-  //   type: "website",
-  // },
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title,
-  //   description,
-  //   images: ["/GameShow.jpg"],
-  //   creator: "@fanyuuu2006",
-  //   site: "@fanyuuu2006",
-  // },
-  // robots: "index, follow",
-
-  // verification: {
-  //   google: "",
-  // },
   alternates: {
     canonical: url,
-    languages: {
-      "zh-TW": url,
-      "en": url,
-      "x-default": url,
-    },
   },
 };

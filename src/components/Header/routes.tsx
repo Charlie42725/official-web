@@ -3,19 +3,19 @@ export const routes: {
   href: string;
 }[] = [
   {
-    label: "Home",
+    label: "首頁",
     href: "/",
   },
   {
-    label: "About",
-    href: "/about",
+    label: "服務項目",
+    href: "/#services",
   },
   {
-    label: "Contact",
-    href: "/contact",
-  },
-  {
-    label: "Portfolio",
+    label: "作品集",
     href: "/portfolio",
+  },
+  {
+    label: "報價方案",
+    href: "/#pricing",
   },
 ];

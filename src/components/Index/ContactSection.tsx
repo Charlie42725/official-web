@@ -2,22 +2,28 @@
 
 import { fadeInItem, staggerContainer } from "@/libs/motion";
 import { cn } from "@/utils/className";
-import { MailOutlined, SendOutlined } from "@ant-design/icons";
+import { MailOutlined, SendOutlined, GithubOutlined } from "@ant-design/icons";
 import { OutsideLink } from "fanyucomponents";
 import { motion } from "framer-motion";
 import { useCallback, useState } from "react";
 import { Title } from "../custom/Title";
 
-const email = "futurixdev6@gmail.com";
+const email = "wulinux42@gmail.com";
 
-// 聯繫方式數據
 const contactInfo = [
   {
     icon: MailOutlined,
     label: "Email",
-    value: "futurixdev6@gmail.com",
+    value: email,
     link: `mailto:${email}`,
-    description: "Send us an email",
+    description: "直接寄信，通常 24 小時內回覆",
+  },
+  {
+    icon: GithubOutlined,
+    label: "GitHub",
+    value: "Charlie42725",
+    link: "https://github.com/Charlie42725",
+    description: "查看部分開源專案",
   },
 ];
 
@@ -33,27 +39,27 @@ const formFields: Array<{
 }> = [
   {
     name: "name",
-    label: "Name",
-    placeholder: "Enter your name",
+    label: "您的姓名",
+    placeholder: "請輸入您的名字",
     required: true,
     tag: "input",
-    className: "text-lg",
+    className: "text-base",
   },
   {
     name: "email",
     label: "Email",
-    placeholder: "Enter your email",
+    placeholder: "請輸入您的 Email",
     required: true,
     tag: "input",
-    className: "text-lg",
+    className: "text-base",
   },
   {
     name: "message",
-    label: "Message",
-    placeholder: "Type your message here...",
+    label: "需求說明",
+    placeholder: "請簡單描述您的專案需求、預算範圍或想討論的內容...",
     required: true,
     tag: "textarea",
-    className: "text-lg",
+    className: "text-base",
   },
 ];
 
@@ -78,12 +84,9 @@ export const ContactSection = () => {
   const handleSubmit = useCallback(
     (e: React.FormEvent) => {
       e.preventDefault();
-      console.log("Form submitted:", formData);
-
-      // 使用 mailto 發送郵件
-      const subject = encodeURIComponent(`Message from ${formData.name}`);
+      const subject = encodeURIComponent(`接案詢問：${formData.name}`);
       const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        `姓名：${formData.name}\nEmail：${formData.email}\n\n需求說明：\n${formData.message}`
       );
       window.open(`mailto:${email}?subject=${subject}&body=${body}`);
     },
@@ -93,7 +96,6 @@ export const ContactSection = () => {
   return (
     <section id="contact">
       <div className="container mb-12">
-        {/* 標題區域 */}
         <motion.div
           variants={fadeInItem}
           initial="hiddenBottom"
@@ -101,36 +103,35 @@ export const ContactSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
         >
-          <Title>Contact Us</Title>
-          <p className="text-lg md:text-xl text-[var(--text-color-muted)] mt-4 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let&apos;s discuss your next
-            project.
+          <Title>聯繫合作</Title>
+          <p className="text-lg text-[var(--text-color-muted)] mt-2 max-w-2xl mx-auto">
+            有需求歡迎直接聯繫，說說您的想法，我們來討論可行方案。
           </p>
         </motion.div>
 
-        {/* 主要內容區域 */}
         <motion.div
           variants={staggerContainer}
           initial="hiddenBottom"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16"
         >
-          {/* 左側 - 聯繫信息 */}
+          {/* 左側 - 聯繫資訊 */}
           <motion.div variants={fadeInItem} className="space-y-8">
             <div>
-              <h2 className="text-3xl font-semibold text-[var(--text-color)] mb-6">
-                Get in Touch
+              <h2
+                className="text-2xl font-bold text-[var(--text-color)] mb-4"
+                style={{
+                  fontFamily: "var(--font-heading), system-ui, sans-serif",
+                }}
+              >
+                開始一次合作
               </h2>
-              <p className="text-[var(--text-color-muted)] text-lg leading-relaxed">
-                We&apos;re here to help turn your digital dreams into reality.
-                Whether you need a stunning website, a powerful web application,
-                or innovative digital solutions, our team is ready to
-                collaborate with you.
+              <p className="text-[var(--text-color-muted)] text-base leading-relaxed">
+                可單次合作，也可長期維護與技術支援。不論是全新專案、既有系統優化，或只是想聊聊技術可行性，都歡迎聯繫。
               </p>
             </div>
 
-            {/* 聯繫方式列表 */}
             <div className="space-y-4">
               {contactInfo.map((contact, index) => {
                 const IconComponent = contact.icon;
@@ -138,22 +139,22 @@ export const ContactSection = () => {
                   <motion.div
                     key={index}
                     variants={fadeInItem}
-                    className="card flex items-center space-x-4 p-4"
+                    className="card flex items-center gap-4 p-4 cursor-pointer"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] flex items-center justify-center text-white">
-                      <IconComponent className="text-xl" />
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[var(--text-color-secondary)] to-[var(--text-color-tertiary)] flex items-center justify-center text-white flex-shrink-0">
+                      <IconComponent className="text-lg" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-[var(--text-color)]">
+                    <div className="flex-1 min-w-0">
+                      <p className="font-semibold text-[var(--text-color)] text-sm">
                         {contact.label}
-                      </h3>
+                      </p>
                       <OutsideLink
                         href={contact.link}
-                        className="text-[var(--text-color-muted)] hover:text-[var(--text-color-primary)] transition-colors"
+                        className="text-[var(--text-color-primary)] hover:opacity-80 transition-opacity text-sm font-medium truncate block"
                       >
                         {contact.value}
                       </OutsideLink>
-                      <p className="text-sm text-[var(--text-color-muted)]">
+                      <p className="text-xs text-[var(--text-color-muted)] mt-0.5">
                         {contact.description}
                       </p>
                     </div>
@@ -161,25 +162,43 @@ export const ContactSection = () => {
                 );
               })}
             </div>
+
+            <div className="card p-5 border-[var(--border-color-light)]/30">
+              <p className="text-sm font-semibold text-[var(--text-color-primary)] mb-2">
+                技術方向
+              </p>
+              <p className="text-xs text-[var(--text-color-muted)] leading-relaxed">
+                Frontend：React / Next.js / Tailwind
+                <br />
+                Backend：Node.js / PHP / Supabase / PostgreSQL
+                <br />
+                其他：REST API · Docker · Firebase · Webhook · 自動化流程
+              </p>
+            </div>
           </motion.div>
 
           {/* 右側 - 聯繫表單 */}
           <motion.div variants={fadeInItem}>
             <div className="card p-8">
-              <h3 className="text-2xl font-semibold text-[var(--text-color)] mb-6">
-                Send us a Message
+              <h3
+                className="text-xl font-bold text-[var(--text-color)] mb-6"
+                style={{
+                  fontFamily: "var(--font-heading), system-ui, sans-serif",
+                }}
+              >
+                傳送訊息
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 {formFields.map((field) => (
                   <div key={field.name}>
                     <label
                       htmlFor={field.name}
-                      className="block text-sm font-medium text-[var(--text-color)] mb-2"
+                      className="block text-sm font-medium text-[var(--text-color)] mb-1.5"
                     >
                       {field.label}
                       {field.required && (
-                        <span className="text-red-500"> *</span>
+                        <span className="text-indigo-400 ml-1">*</span>
                       )}
                     </label>
                     <field.tag
@@ -188,8 +207,9 @@ export const ContactSection = () => {
                       required={field.required}
                       value={formData[field.name]}
                       onChange={handleInputChange}
+                      rows={field.tag === "textarea" ? 4 : undefined}
                       className={cn(
-                        "w-full px-4 py-3 bg-[var(--background-color-secondary)] border border-[var(--border-color)] rounded-lg placeholder-[var(--text-color-muted)] focus:border-[var(--border-color-focus)] focus:outline-none focus:ring-2 focus:ring-[var(--text-color-primary)]/20 transition-all",
+                        "w-full px-4 py-3 bg-[var(--background-color-secondary)] border border-[var(--border-color)] rounded-xl placeholder-[var(--text-color-muted)] focus:border-[var(--text-color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--text-color-primary)]/20 transition-all resize-none",
                         field.className
                       )}
                       placeholder={field.placeholder}
@@ -197,21 +217,20 @@ export const ContactSection = () => {
                   </div>
                 ))}
 
-                {/* 提交按鈕 */}
                 <button
                   type="submit"
                   className={cn(
-                    "w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg",
+                    "w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white",
                     "btn-primary"
                   )}
                 >
                   <SendOutlined />
-                  Send Message
+                  送出訊息
                 </button>
               </form>
 
-              <p className="text-sm text-[var(--text-color-muted)] mt-4 text-center">
-                We&apos;ll get back to you soon.
+              <p className="text-xs text-[var(--text-color-muted)] mt-4 text-center">
+                按下送出後會開啟您的郵件客戶端，通常 24 小時內回覆。
               </p>
             </div>
           </motion.div>
