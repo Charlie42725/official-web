@@ -12,7 +12,7 @@ import {
 } from "framer-motion";
 import { fadeInItem, staggerContainer } from "@/libs/motion";
 import Link from "next/link";
-import { ArrowRightOutlined, LinkOutlined, MessageOutlined } from "@ant-design/icons";
+import { ArrowRightOutlined, LinkOutlined } from "@ant-design/icons";
 import { useRef } from "react";
 
 const T = (url: string) =>
@@ -35,10 +35,11 @@ const preview = [
   },
   {
     url: "https://erp-eta-six.vercel.app/",
-    img: T("https://erp-eta-six.vercel.app/"),
+    img: "/portfolio/全端ERP.png",
     title: "全端 ERP 系統",
     category: "企業系統",
     tags: ["React", "Node.js", "PostgreSQL"],
+    objectPosition: "75% top",
   },
   {
     url: "https://ai-trader-ten-rose.vercel.app/",
@@ -49,7 +50,7 @@ const preview = [
   },
   {
     url: "https://ai-math-seven.vercel.app/",
-    img: T("https://ai-math-seven.vercel.app/"),
+    img: "/portfolio/AI math.png",
     title: "AI 數學學習平台",
     category: "AI 工具",
     tags: ["Next.js", "OpenAI API"],
@@ -127,7 +128,8 @@ export const PortfolioSection = () => {
                     <img
                       src={item.img}
                       alt={`${item.title} 預覽`}
-                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      style={{ objectPosition: item.objectPosition ?? "center top" }}
                       loading="lazy"
                       onError={(e) => {
                         const t = e.currentTarget;
@@ -201,15 +203,13 @@ export const PortfolioSection = () => {
             查看報價方案
             <ArrowRightOutlined />
           </Link>
-          <a
-            href="https://mail.google.com/mail/?view=cm&to=wulinux42%40gmail.com&su=%E6%8E%A5%E6%A1%88%E8%A9%A2%E5%95%8F"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/portfolio"
             className="btn rounded-full inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold hover:border-[var(--text-color-primary)] hover:text-[var(--text-color-primary)] transition-all"
           >
-            討論你的需求
-            <MessageOutlined />
-          </a>
+            看更多作品
+            <ArrowRightOutlined />
+          </Link>
         </motion.div>
       </div>
     </section>
